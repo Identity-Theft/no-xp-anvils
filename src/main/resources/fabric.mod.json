@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "no_xp_anvils",
+	"id": "no-xp-anvils",
 	"version": "${version}",
 	"name": "No XP Anvils",
 	"description": "Removes the XP cost for repairing, renaming and applying enchantments to tools and gear in an anvil",
@@ -16,15 +16,15 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-          "identitytheft.noxpanvils.NoXpAnvils"
+			"identitytheft.noxpanvils.NoXpAnvils"
 		]
 	},
 	"mixins": [
-		"no_xp_anvils.mixins.json"
+		"no-xp-anvils.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.16.10",
-		"minecraft": ">=1.21.1",
+		"fabricloader": ">=0.16.14",
+		"minecraft": "~1.21.5",
 		"java": ">=21"
 	}
 }
