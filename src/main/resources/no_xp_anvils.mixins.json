@@ -3,8 +3,7 @@
 	"package": "identitytheft.noxpanvils.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"AnvilScreenHandlerMixin",
-		"ItemStackMixin"
+		"AnvilScreenHandlerMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
