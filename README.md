@@ -1,7 +1,7 @@
 ### About
 Removes the XP cost for repairing, renaming and applying enchantments to tools and gear in an anvil.
 
-**As of v1.2.0 [MidnightLib](https://modrinth.com/mod/midnightlib) is requried on the client.**
+**As of v1.2.0 [MidnightLib](https://modrinth.com/mod/midnightlib) is required on the client.**
 
 ***
 
