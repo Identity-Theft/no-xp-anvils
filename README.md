@@ -1,7 +1,9 @@
 ### About
 Removes the XP cost for repairing, renaming and applying enchantments to tools and gear in an anvil.
 
-**As of v1.2.0 [MidnightLib](https://modrinth.com/mod/midnightlib) is required on the client.**
+No XP Anvils works as a server-side mod, but it is recommended to be installed on the client as well.   
+
+**[YerAnotherConfigLib](https://modrinth.com/mod/yacl) and [Fabric API](https://modrinth.com/mod/fabric-api) are both required.**
 
 ***
 

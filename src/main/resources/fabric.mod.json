@@ -17,6 +17,9 @@
 	"entrypoints": {
 		"main": [
 			"identitytheft.noxpanvils.NoXpAnvils"
+		],
+		"modmenu": [
+			"identitytheft.noxpanvils.config.GUI"
 		]
 	},
 	"mixins": [
@@ -27,6 +30,6 @@
 		"minecraft": "~1.21.5",
 		"java": ">=21",
         "fabric-api": "*",
-        "midnightlib":"*"
+		"yet_another_config_lib_v3": ">=3.8.2+1.21.5-fabric"
 	}
 }

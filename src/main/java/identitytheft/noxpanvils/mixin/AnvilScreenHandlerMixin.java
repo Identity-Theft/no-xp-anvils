@@ -1,6 +1,6 @@
 package identitytheft.noxpanvils.mixin;
 
-import identitytheft.noxpanvils.NoXpAnvilsConfig;
+import identitytheft.noxpanvils.config.Config;
 import net.minecraft.component.ComponentType;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.entity.player.PlayerEntity;
@@ -35,16 +35,12 @@ public abstract class AnvilScreenHandlerMixin extends ForgingScreenHandler {
 		var firstItem = this.input.getStack(0).getItem();
 		var secondItem = this.input.getStack(1).getItem();
 
-		if (firstItem == Items.AIR) return false;
-
-		if (secondItem == Items.AIR && NoXpAnvilsConfig.rename) return false;
-		if (firstStack.canRepairWith(secondStack) && NoXpAnvilsConfig.repair) return false;
-		if (firstItem != Items.ENCHANTED_BOOK && secondItem == Items.ENCHANTED_BOOK && NoXpAnvilsConfig.enchant) return false;
-		if (firstItem == Items.ENCHANTED_BOOK && secondItem == Items.ENCHANTED_BOOK && NoXpAnvilsConfig.combineBooks) return false;
-		if (firstItem == secondItem && NoXpAnvilsConfig.combineGear) return false;
-
-		return true;
-	}
+        return firstItem != Items.AIR && (secondItem != Items.AIR || Config.HANDLER.instance().rename)
+				&& (!firstStack.canRepairWith(secondStack) || Config.HANDLER.instance().repair)
+				&& (firstItem == Items.ENCHANTED_BOOK || secondItem != Items.ENCHANTED_BOOK || Config.HANDLER.instance().enchant)
+				&& (firstItem != Items.ENCHANTED_BOOK || secondItem != Items.ENCHANTED_BOOK || Config.HANDLER.instance().combineBooks)
+				&& (firstItem != secondItem || Config.HANDLER.instance().combineGear);
+    }
 
 	@Inject(method = "canTakeOutput", at = @At("HEAD"), cancellable = true)
 	private void noxpanvils$canTakeOutput(PlayerEntity player, boolean present, CallbackInfoReturnable<Boolean> cir) {
@@ -61,7 +57,7 @@ public abstract class AnvilScreenHandlerMixin extends ForgingScreenHandler {
 	}
 
 	@Redirect(method = {"updateResult"}, at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;getOrDefault(Lnet/minecraft/component/ComponentType;Ljava/lang/Object;)Ljava/lang/Object;"))
-	private Object noxpanvils$getOrDefault(ItemStack instance, ComponentType componentType, Object o) {
+	private Object noxpanvils$getOrDefault(ItemStack instance, ComponentType<Object> componentType, Object o) {
 		if (CheckConfig()) return 0;
 		return instance.getOrDefault(componentType, o);
 	}
@@ -74,14 +70,8 @@ public abstract class AnvilScreenHandlerMixin extends ForgingScreenHandler {
 
 	@Redirect(method = {"updateResult"}, at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;set(Lnet/minecraft/component/ComponentType;Ljava/lang/Object;)Ljava/lang/Object;"))
 	private <T> T noxpanvils$setRepairCost(ItemStack instance, ComponentType<T> type, T value) {
-		if (CheckConfig() && type == DataComponentTypes.REPAIR_COST) return null;
+		if (type == DataComponentTypes.REPAIR_COST && CheckConfig()) return null;
 		return instance.set(type, value);
-	}
-
-	@ModifyConstant(method = "updateResult", constant = @Constant(intValue = 40, ordinal = 2))
-	private int noxpanvils$maxValue(int input) {
-		if (CheckConfig()) return Integer.MAX_VALUE;
-		return 40;
 	}
 
 	@Inject(method = "getLevelCost", at = @At("HEAD"), cancellable = true)

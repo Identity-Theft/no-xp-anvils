@@ -1,6 +1,6 @@
 package identitytheft.noxpanvils;
 
-import eu.midnightdust.lib.config.MidnightConfig;
+import identitytheft.noxpanvils.config.Config;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -13,6 +13,6 @@ public class NoXpAnvils implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		LOGGER.info("Starting No XP Anvils!");
-		MidnightConfig.init(MOD_ID, NoXpAnvilsConfig.class);
+		Config.HANDLER.load();
 	}
 }
