@@ -1,6 +1,5 @@
 ﻿{
   "no-xp-anvils.title": "No XP Anvils",
-  "no-xp-anvils.comment": "Whether the following anvil operations should consume XP.",
 
   "no-xp-anvils.rename": "Renaming items",
   "no-xp-anvils.repair": "Repairing items",
