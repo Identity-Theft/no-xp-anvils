@@ -1,10 +1,12 @@
 ﻿{
-  "no_xp_anvils.midnightconfig.title": "No XP Anvils",
-  "no_xp_anvils.midnightconfig.comment": "Whether the following anvil operations should consume XP.",
+  "no-xp-anvils.title": "No XP Anvils",
 
-  "no_xp_anvils.midnightconfig.rename": "Rename Items",
-  "no_xp_anvils.midnightconfig.repair": "Repair Gear",
-  "no_xp_anvils.midnightconfig.enchant": "Enchant Gear",
-  "no_xp_anvils.midnightconfig.combineGear": "Combine Gear",
-  "no_xp_anvils.midnightconfig.combineBooks": "Combine Enchanted Books"
+  "no-xp-anvils.rename": "Renaming items",
+  "no-xp-anvils.repair": "Repairing items",
+  "no-xp-anvils.enchant": "Enchanting items",
+  "no-xp-anvils.combineGear": "Combining items",
+  "no-xp-anvils.combineBooks": "Combining enchanted books",
+
+  "no-xp-anvils.xp": "Uses XP",
+  "no-xp-anvils.no_xp": "Does not use XP"
 }

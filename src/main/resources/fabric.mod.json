@@ -17,16 +17,19 @@
 	"entrypoints": {
 		"main": [
           "identitytheft.noxpanvils.NoXpAnvils"
+		],
+		"modmenu": [
+			"identitytheft.noxpanvils.config.GUI"
 		]
 	},
 	"mixins": [
 		"no_xp_anvils.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.17.2",
+		"fabricloader": ">=0.18.4",
 		"minecraft": ">=1.21.1",
 		"java": ">=21",
-        "midnightlib": "*",
-        "fabric-api": "*"
+        "fabric-api": "*",
+		"yet_another_config_lib_v3": ">=3.8.2+1.21.1-fabric"
 	}
 }

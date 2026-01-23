@@ -1,7 +1,9 @@
 ### About
 Removes the XP cost for repairing, renaming and applying enchantments to tools and gear in an anvil.
 
-**As of v1.2.0 [MidnightLib](https://modrinth.com/mod/midnightlib) is required on the client.**
+No XP Anvils works as a server-side mod, but it is recommended to be installed on the client as well.
+
+**[YerAnotherConfigLib](https://modrinth.com/mod/yacl) and [Fabric API](https://modrinth.com/mod/fabric-api) are both required.**
 
 ***
 
@@ -27,7 +29,7 @@ Removes the XP cost for repairing, renaming and applying enchantments to tools a
 [![Modrinth](https://badges.penpow.dev/badges/available/modrinth/cozy-minimal.svg)](https://modrinth.com/mod/no-xp-anvils)
 [![GitHub](https://badges.penpow.dev/badges/available/github/cozy-minimal.svg)](https://github.com/Identity-Theft/no-xp-anvils)
 [![ko-fi](https://badges.penpow.dev/badges/donate/kofi-singular/cozy-minimal.svg)](https://ko-fi.com/identitytheft)
-[![website](https://badges.penpow.dev/badges/documentation/website/cozy-minimal.svg)](https://identity-theft.github.io/)   
+[![website](https://badges.penpow.dev/badges/documentation/website/cozy-minimal.svg)](https://identity-theft.github.io/)
 
 ***
 
