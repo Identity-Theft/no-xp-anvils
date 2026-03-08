@@ -3,7 +3,7 @@ Removes the XP cost for repairing, renaming and applying enchantments to tools a
 
 No XP Anvils works as a server-side mod, but it is recommended to be installed on the client as well.   
 
-**[YerAnotherConfigLib](https://modrinth.com/mod/yacl) and [Fabric API](https://modrinth.com/mod/fabric-api) are both required.**
+**[YetAnotherConfigLib](https://modrinth.com/mod/yacl) and [Fabric API](https://modrinth.com/mod/fabric-api) are both required.**
 
 ***
 
