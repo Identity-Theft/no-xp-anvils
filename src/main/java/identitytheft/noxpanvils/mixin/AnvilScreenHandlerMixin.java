@@ -2,6 +2,7 @@ package identitytheft.noxpanvils.mixin;
 
 import identitytheft.noxpanvils.config.Config;
 import net.minecraft.component.ComponentType;
+import net.minecraft.component.DataComponentTypes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
@@ -59,8 +60,8 @@ public abstract class AnvilScreenHandlerMixin extends ForgingScreenHandler {
 	}
 
 	@Redirect(method = {"updateResult"}, at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;getOrDefault(Lnet/minecraft/component/ComponentType;Ljava/lang/Object;)Ljava/lang/Object;"))
-	private Object noxpanvils$getOrDefault(ItemStack instance, ComponentType<Object> componentType, Object o) {
-		if (CheckConfig()) return 0;
+	private <T> T noxpanvils$getOrDefault(ItemStack instance, ComponentType<? extends T> componentType, T o) {
+		if (componentType == DataComponentTypes.REPAIR_COST && CheckConfig()) return o;
 		return instance.getOrDefault(componentType, o);
 	}
 
@@ -72,7 +73,7 @@ public abstract class AnvilScreenHandlerMixin extends ForgingScreenHandler {
 
 	@Redirect(method = {"updateResult"}, at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;set(Lnet/minecraft/component/ComponentType;Ljava/lang/Object;)Ljava/lang/Object;"))
 	private <T> T noxpanvils$setRepairCost(ItemStack instance, ComponentType<? super T> type, T value) {
-		if (CheckConfig()) return null;
+		if (type == DataComponentTypes.REPAIR_COST && CheckConfig()) return null;
 		return instance.set(type, value);
 	}
 
